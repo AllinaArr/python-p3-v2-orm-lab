@@ -46,7 +46,7 @@ class Review:
     
     @employee_id.setter
     def employee_id(self, employee_id):
-        if isinstance(employee_id, int) and Employee.find_by_id(employee_id):
+        if Employee.find_by_id(employee_id):
             self._employee_id = employee_id
         else:
             raise ValueError("employee_id must reference an employee in the database")     
